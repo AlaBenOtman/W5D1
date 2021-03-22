@@ -5,6 +5,7 @@ end
 
 class Array
   def hash
+    self.hash
   end
 end
 
