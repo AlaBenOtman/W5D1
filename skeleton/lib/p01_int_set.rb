@@ -1,15 +1,22 @@
+require "byebug"
 class MaxIntSet
+  attr_accessor :store
   def initialize(max)
     @max = max
-    @store = Array.new(max,false)
+    @store = Array.new(max, false)
 
   end
 
+  def []=(index, bool)
+    @store[index] = bool
+  end
+
   def insert(num)
+    # debugger
     if is_valid?(num)
-      @store[num] = true 
+     @store[num] = true 
     else 
-      raise "the number is out of range"
+      raise "Out of bounds"
     end
   end
 
@@ -24,7 +31,7 @@ class MaxIntSet
       @store[num] 
     end
   end
-
+  
   private
 
   def is_valid?(num)
@@ -33,8 +40,11 @@ class MaxIntSet
 
   def validate!(num)
   end
+  
 end
-
+s = MaxIntSet.new(50)
+s.insert(1)
+p s
 
 class IntSet
   def initialize(num_buckets = 20)
