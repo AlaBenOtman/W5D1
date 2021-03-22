@@ -12,7 +12,6 @@ class MaxIntSet
   end
 
   def insert(num)
-    # debugger
     if is_valid?(num)
      @store[num] = true 
     else 
@@ -39,12 +38,11 @@ class MaxIntSet
   end
 
   def validate!(num)
+    
   end
   
 end
-s = MaxIntSet.new(50)
-s.insert(1)
-p s
+
 
 class IntSet
   def initialize(num_buckets = 20)
